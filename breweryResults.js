@@ -64,8 +64,8 @@ export default class BreweryResults extends LightningElement {
     handleSearch(e){
         
         console.log('radioValue->'+this.radioValue);
-        if(this.radioValue == ''){
-            this.calloutURI = this.calloutURI+'by_name='+this.brewNameValue+'&by_city=';//+this.cityNameValue+'&by_type='+this.radioValue;
+        if(this.radioValue == '' || this.radioValue === null){
+            this.calloutURI = this.calloutURI+'by_name='+this.brewNameValue+'&by_city='+this.cityNameValue;//+'&by_type='+this.radioValue;
         }
         else{
             this.calloutURI = this.calloutURI+'by_name='+this.brewNameValue+'&by_city='+this.cityNameValue+'&by_type='+this.radioValue;
